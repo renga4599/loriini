@@ -21,6 +21,11 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<packaging.type>jar</packaging.type>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring-cloud.version>Dalston.SR4</spring-cloud.version>
+		<revision>1.0.0-SNAPSHOT</revision>
 	</properties>
 
 	<dependencies>
