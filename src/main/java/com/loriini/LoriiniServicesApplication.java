@@ -9,5 +9,4 @@ public class LoriiniServicesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoriiniServicesApplication.class, args);
 	}
-
 }

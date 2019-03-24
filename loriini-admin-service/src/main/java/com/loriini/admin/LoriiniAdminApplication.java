@@ -1,12 +1,12 @@
-package com.loriini.user;
+package com.loriini.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoriiniUserApplication {
+public class LoriiniAdminApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoriiniUserApplication.class, args);
+        SpringApplication.run(LoriiniAdminApplication.class, args);
     }
 }

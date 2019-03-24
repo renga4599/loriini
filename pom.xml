@@ -6,6 +6,7 @@
 	<modules>
 		<module>loriini-common</module>
 		<module>loriini-user-service</module>
+		<module>loriini-admin-service</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
