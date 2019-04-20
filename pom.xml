@@ -7,6 +7,7 @@
 		<module>loriini-common</module>
 		<module>loriini-user-service</module>
 		<module>loriini-admin-service</module>
+        <module>loriini-notification-service</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,11 +26,30 @@
 		<packaging.type>jar</packaging.type>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<spring-cloud.version>Dalston.SR4</spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <!--<spring-cloud.version>Finchley.SR2</spring-cloud.version>-->
 		<revision>1.0.0-SNAPSHOT</revision>
 	</properties>
 
-	<dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.5</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
