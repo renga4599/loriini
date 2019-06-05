@@ -6,8 +6,12 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * @FeignClient(value = "user-service", url = "http://localhost:8300/user-service") -- Feign client with direct URL
+ * Feign already internally uses ribbon to send requests.
+ * @RibbonClient(name="user-service", configuration = RibbonConfiguration.class) -- if you want to use custom ribbon client configuration
+ */
 
-//@FeignClient(value = "user-service", url = "http://localhost:8300/user-service") -- Feign client with direct URL
 @FeignClient(name = "user-service")
 @RibbonClient(name = "user-service")
 public interface UserServiceClient {

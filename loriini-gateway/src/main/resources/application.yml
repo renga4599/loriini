@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+servlet.context-path: /loriini-gateway
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry:  true
+    serviceUrl:
+      defaultZone:  http://localhost:8761/eureka/
+    healthcheck:
+      enabled:  true
+
+ribbon:
+  ReadTimeout: 60000
+
+zuul:
+  ignoredServices:  '*'
+  routes:
+    user:
+      path: /user-service/**
+      serviceId:  user-service
+      stripPrefix:  false
+  maxTotalConnections:  200
+  maxPerRouteConnections: 20

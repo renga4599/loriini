@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,10 +36,10 @@ public class UserController implements UserControllerEndpoint {
     }
 
     @Override
-    public ResponseEntity<UserDetails> getUserById() {
+    public ResponseEntity<UserDetails> getUserById(@PathVariable("id") Long userId) {
         log.info("getUserById - userId: {}", "TEST");
         UserDetails userDetails = new UserDetails();
-        userDetails.setId("TEST");
+        userDetails.setId(userId);
         userDetails.setName("Renga");
         return new ResponseEntity<>(userDetails, HttpStatus.OK);
     }

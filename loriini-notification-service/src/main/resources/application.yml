@@ -1,6 +1,6 @@
 server:
   port: 8200
-  servlet.context-path: /notification-service
+  #servlet.context-path: /notification-service
   #servlet.context-path: /${spring.application.name}
 
 #user-service:
