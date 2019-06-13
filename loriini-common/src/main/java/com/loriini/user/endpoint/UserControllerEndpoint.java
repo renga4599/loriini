@@ -15,4 +15,7 @@ public interface UserControllerEndpoint {
 
     @GetMapping(path = "/user-service/api/v1/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<UserDetails> getUserById(@PathVariable("id") Long userId);
+
+    @GetMapping(path = "/user-service/api/v1/user/name/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<String> getUserName(@PathVariable("id") Long userId);
 }

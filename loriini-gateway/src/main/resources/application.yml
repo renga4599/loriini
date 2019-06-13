@@ -1,7 +1,7 @@
 server:
   port: 8080
 
-servlet.context-path: /loriini-gateway
+servlet.context-path: /gateway-service
 
 eureka:
   client:
@@ -17,6 +17,10 @@ ribbon:
 
 zuul:
   ignoredServices:  '*'
+  #ignoredServices helps to avoid any services automatically added
+  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  #It is blacklist. Zuul does not send it to the downstream services
+  #sensitiveHeaders: (If you want to allow all the headers, need to add an empty list like this)
   routes:
     user:
       path: /user-service/**
